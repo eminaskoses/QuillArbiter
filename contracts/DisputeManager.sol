@@ -154,5 +154,26 @@ contract DisputeManager is IDisputeManager, AccessControl, ReentrancyGuard {
         require(balance > 0, "No fees to withdraw");
         payable(msg.sender).transfer(balance);
     }
+
+    /**
+     * @notice Get total number of disputes
+     */
+    function getTotalDisputes() external view returns (uint256) {
+        return _disputeCounter;
+    }
+
+    /**
+     * @notice Check if a dispute exists
+     */
+    function disputeExists(uint256 disputeId) external view returns (bool) {
+        return _disputes[disputeId].disputeId != 0;
+    }
+
+    /**
+     * @notice Get dispute count for a user
+     */
+    function getUserDisputeCount(address user) external view returns (uint256) {
+        return _userDisputes[user].length;
+    }
 }
 
