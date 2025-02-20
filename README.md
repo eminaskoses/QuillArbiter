@@ -80,7 +80,14 @@ npm run compile
 Run the complete test suite:
 
 ```bash
+# Run all tests
 npm run test
+
+# Run with coverage
+npm run test:coverage
+
+# Run with gas reporting
+npm run test:gas
 ```
 
 ## Deployment
