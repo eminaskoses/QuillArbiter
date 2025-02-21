@@ -131,5 +131,26 @@ contract EvidenceVault is IEvidenceVault, AccessControl {
         require(newDisputeManager != address(0), "Invalid address");
         disputeManager = IDisputeManager(newDisputeManager);
     }
+
+    /**
+     * @notice Get total evidence count
+     */
+    function getTotalEvidenceCount() external view returns (uint256) {
+        return _evidenceCounter;
+    }
+
+    /**
+     * @notice Get evidence count for a dispute
+     */
+    function getDisputeEvidenceCount(uint256 disputeId) external view returns (uint256) {
+        return _disputeEvidence[disputeId].length;
+    }
+
+    /**
+     * @notice Check if evidence exists
+     */
+    function evidenceExists(uint256 evidenceId) external view returns (bool) {
+        return _evidence[evidenceId].evidenceId != 0;
+    }
 }
 
