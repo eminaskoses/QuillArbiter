@@ -212,5 +212,27 @@ contract JuryPool is IJuryPool, AccessControl, ReentrancyGuard {
     function setLockPeriod(uint256 period) external onlyRole(DEFAULT_ADMIN_ROLE) {
         lockPeriod = period;
     }
+
+    /**
+     * @notice Get total number of jurors
+     */
+    function getTotalJurors() external view returns (uint256) {
+        return _activeJurors.length;
+    }
+
+    /**
+     * @notice Get juror performance metrics
+     */
+    function getJurorPerformance(address juror) external view returns (
+        uint256 totalVotes,
+        uint256 correctVotes,
+        uint256 accuracy
+    ) {
+        Juror memory jurorData = _jurors[juror];
+        uint256 accuracyPercent = jurorData.totalVotes > 0 
+            ? (jurorData.correctVotes * 100) / jurorData.totalVotes 
+            : 0;
+        return (jurorData.totalVotes, jurorData.correctVotes, accuracyPercent);
+    }
 }
 
