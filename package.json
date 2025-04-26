@@ -5,9 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "hardhat test",
+    "test:coverage": "hardhat coverage",
     "compile": "hardhat compile",
     "deploy": "hardhat run scripts/deploy.js",
-    "node": "hardhat node"
+    "deploy:sepolia": "hardhat run scripts/deploy.js --network optimismSepolia",
+    "verify": "node scripts/verify-contracts.js",
+    "node": "hardhat node",
+    "listen": "node scripts/listen-events.js",
+    "lint": "solhint 'contracts/**/*.sol'",
+    "lint:fix": "solhint 'contracts/**/*.sol' --fix",
+    "format": "prettier --write 'contracts/**/*.sol' 'test/**/*.js' 'scripts/**/*.js'"
   },
   "keywords": [
     "blockchain",
