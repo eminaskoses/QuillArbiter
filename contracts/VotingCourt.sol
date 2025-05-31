@@ -210,5 +210,23 @@ contract VotingCourt is IVotingCourt, AccessControl {
         require(newJurySelection != address(0), "Invalid address");
         jurySelection = IJurySelection(newJurySelection);
     }
+
+    /**
+     * @notice Check if commit period is active
+     */
+    function isCommitPeriodActive(uint256 disputeId) external view returns (bool) {
+        VotingSession memory session = _votingSessions[disputeId];
+        return session.disputeId != 0 && block.timestamp <= session.commitDeadline;
+    }
+
+    /**
+     * @notice Check if reveal period is active
+     */
+    function isRevealPeriodActive(uint256 disputeId) external view returns (bool) {
+        VotingSession memory session = _votingSessions[disputeId];
+        return session.disputeId != 0 && 
+               block.timestamp > session.commitDeadline &&
+               block.timestamp <= session.revealDeadline;
+    }
 }
 
