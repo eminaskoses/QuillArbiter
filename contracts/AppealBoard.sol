@@ -167,5 +167,20 @@ contract AppealBoard is IAppealBoard, AccessControl, ReentrancyGuard {
         require(balance > 0, "No fees to withdraw");
         payable(msg.sender).transfer(balance);
     }
+
+    /**
+     * @notice Get total appeal count
+     */
+    function getTotalAppeals() external view returns (uint256) {
+        return _appealCounter;
+    }
+
+    /**
+     * @notice Check if appeal is pending
+     */
+    function isAppealPending(uint256 appealId) external view returns (bool) {
+        require(_appeals[appealId].appealId != 0, "Appeal does not exist");
+        return !_appeals[appealId].processed;
+    }
 }
 
