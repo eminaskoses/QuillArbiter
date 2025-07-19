@@ -141,5 +141,19 @@ contract JurySelection is IJurySelection, AccessControl, VRFConsumerBaseV2 {
         require(newJuryPool != address(0), "Invalid address");
         juryPool = IJuryPool(newJuryPool);
     }
+
+    /**
+     * @notice Get selection status for a dispute
+     */
+    function isSelectionComplete(uint256 disputeId) external view returns (bool) {
+        return _selectedJurors[disputeId].length > 0;
+    }
+
+    /**
+     * @notice Get number of selected jurors for a dispute
+     */
+    function getSelectedJurorCount(uint256 disputeId) external view returns (uint256) {
+        return _selectedJurors[disputeId].length;
+    }
 }
 
