@@ -119,11 +119,15 @@ After deployment, contract addresses will be saved to `deployment-info.json`.
 
 ## Roadmap
 
+See [ROADMAP.md](docs/ROADMAP.md) for detailed timeline.
+
 - [ ] Cross-chain dispute resolution via LayerZero
 - [ ] Fully private juror voting with FHE
 - [ ] DAO plugin for Snapshot/Safe integration
 - [ ] Reputation tokenization for juror performance
 - [ ] Mobile-friendly juror dashboard
+
+For more information, see our [documentation](docs/).
 
 ## Contributing
 
