@@ -1,0 +1,34 @@
+# Test files
+test/
+*.test.js
+
+# Development
+.env
+.env.local
+.github/
+scripts/
+
+# Documentation
+docs/
+*.md
+!README.md
+
+# IDE
+.vscode/
+.idea/
+
+# Git
+.git/
+.gitignore
+
+# Build artifacts
+node_modules/
+cache/
+artifacts/
+coverage/
+
+# Misc
+.DS_Store
+*.log
+deployment-info.json
+
