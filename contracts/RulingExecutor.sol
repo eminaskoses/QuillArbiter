@@ -199,5 +199,13 @@ contract RulingExecutor is IRulingExecutor, AccessControl, ReentrancyGuard {
         require(newJuryPool != address(0), "Invalid address");
         juryPool = IJuryPool(newJuryPool);
     }
+
+    /**
+     * @notice Get winner of a ruling
+     */
+    function getRulingWinner(uint256 disputeId) external view returns (address) {
+        require(_executed[disputeId], "Ruling not executed");
+        return _rulings[disputeId].winner;
+    }
 }
 
