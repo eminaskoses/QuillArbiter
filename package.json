@@ -14,7 +14,9 @@
     "listen": "node scripts/listen-events.js",
     "lint": "solhint 'contracts/**/*.sol'",
     "lint:fix": "solhint 'contracts/**/*.sol' --fix",
-    "format": "prettier --write 'contracts/**/*.sol' 'test/**/*.js' 'scripts/**/*.js'"
+    "format": "prettier --write 'contracts/**/*.sol' 'test/**/*.js' 'scripts/**/*.js'",
+    "clean": "hardhat clean",
+    "size": "hardhat size-contracts"
   },
   "keywords": [
     "blockchain",
@@ -26,13 +28,25 @@
   ],
   "author": "QuillArbiter Team",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eminaskoses/QuillArbiter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eminaskoses/QuillArbiter/issues"
+  },
+  "homepage": "https://github.com/eminaskoses/QuillArbiter#readme",
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^3.0.0",
-    "hardhat": "^2.19.0"
+    "hardhat": "^2.19.0",
+    "hardhat-gas-reporter": "^1.0.9",
+    "solidity-coverage": "^0.8.5"
   },
   "dependencies": {
     "@chainlink/contracts": "^0.8.0",
     "@openzeppelin/contracts": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   }
 }
-
