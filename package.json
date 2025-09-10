@@ -30,7 +30,13 @@
     "dispute-resolution",
     "optimism",
     "smart-contracts",
-    "defi"
+    "defi",
+    "dao",
+    "governance",
+    "jury",
+    "voting",
+    "zk-proof",
+    "chainlink-vrf"
   ],
   "author": "QuillArbiter Team",
   "license": "MIT",
