@@ -126,6 +126,12 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 MIT License - see LICENSE file for details
 
+## Community
+
+- GitHub: [QuillArbiter Repository](https://github.com/eminaskoses/QuillArbiter)
+- Issues: [Report bugs or request features](https://github.com/eminaskoses/QuillArbiter/issues)
+- Discussions: [Join the conversation](https://github.com/eminaskoses/QuillArbiter/discussions)
+
 ## Contact
 
 For questions and support, please open an issue on GitHub.
