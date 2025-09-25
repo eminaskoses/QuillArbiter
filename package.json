@@ -1,6 +1,7 @@
 {
   "name": "quillarbiter",
   "version": "1.0.0",
+  "private": false,
   "description": "Decentralized Arbitration & Evidence Vault Protocol on Optimism",
   "main": "index.js",
   "scripts": {
